@@ -1,2 +1,4 @@
 Ribosomal_field_in_var: 'mito'
 sample_variable: 'Sample.ID'
+batch_variable: ''
+remove ribosomal genes: ''
