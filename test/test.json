@@ -1,163 +1,258 @@
 {
-    "a_galaxy_workflow": "true", 
-    "annotation": "", 
-    "format-version": "0.1", 
-    "name": "travis (imported from uploaded file)", 
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "travis (imported from uploaded file)",
     "steps": {
         "0": {
-            "annotation": "", 
-            "content_id": null, 
-            "errors": null, 
-            "id": 0, 
-            "input_connections": {}, 
-            "inputs": [], 
-            "label": "cut_parameter", 
-            "name": "Input parameter", 
-            "outputs": [], 
-            "position": {
-                "left": 189, 
-                "top": 125
-            }, 
-            "tool_id": null, 
-            "tool_state": "{\"optional\": false, \"parameter_type\": \"text\"}", 
-            "tool_version": null, 
-            "type": "parameter_input", 
-            "uuid": "0dabb9e2-8705-471d-b411-9c6846a76640", 
-            "workflow_outputs": [
-                {
-                    "label": null, 
-                    "output_name": "output", 
-                    "uuid": "4594463a-39cc-4eaa-884d-453b5fdf96bc"
-                }
-            ]
-        }, 
-        "1": {
-            "annotation": "", 
-            "content_id": null, 
-            "errors": null, 
-            "id": 1, 
-            "input_connections": {}, 
-            "inputs": [], 
-            "label": "text_input", 
-            "name": "Input dataset", 
-            "outputs": [], 
-            "position": {
-                "left": 200, 
-                "top": 200
-            }, 
-            "tool_id": null, 
-            "tool_state": "{}", 
-            "tool_version": null, 
-            "type": "data_input", 
-            "uuid": "1b2f2147-d854-40d8-9f00-a84ba2ec91f1", 
-            "workflow_outputs": [
-                {
-                    "label": null, 
-                    "output_name": "output", 
-                    "uuid": "fe6bfb2b-eb47-46dc-8f15-42595b5f1469"
-                }
-            ]
-        }, 
-        "2": {
-            "annotation": "", 
-            "content_id": "Cut1", 
-            "errors": null, 
-            "id": 2, 
-            "input_connections": {
-                "columnList": {
-                    "id": 0, 
-                    "output_name": "output"
-                }, 
-                "input": {
-                    "id": 1, 
-                    "output_name": "output"
-                }
-            }, 
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
             "inputs": [
                 {
-                    "description": "runtime parameter for tool Cut", 
+                    "description": "",
+                    "name": "cut_parameter"
+                }
+            ],
+            "label": "cut_parameter",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "0dabb9e2-8705-471d-b411-9c6846a76640",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "text_input"
+                }
+            ],
+            "label": "text_input",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 11,
+                "top": 75
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "1b2f2147-d854-40d8-9f00-a84ba2ec91f1",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "Cut1",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "columnList": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "input": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Cut",
                     "name": "input"
                 }
-            ], 
-            "label": "cut", 
-            "name": "Cut", 
+            ],
+            "label": "cut",
+            "name": "Cut",
             "outputs": [
                 {
-                    "name": "out_file1", 
+                    "name": "out_file1",
                     "type": "tabular"
                 }
-            ], 
+            ],
             "position": {
-                "left": 481, 
-                "top": 184
-            }, 
+                "left": 292,
+                "top": 59
+            },
             "post_job_actions": {
                 "RenameDatasetActionout_file1": {
                     "action_arguments": {
                         "newname": "single_column.txt"
-                    }, 
-                    "action_type": "RenameDatasetAction", 
+                    },
+                    "action_type": "RenameDatasetAction",
                     "output_name": "out_file1"
                 }
-            }, 
-            "tool_id": "Cut1", 
-            "tool_state": "{\"columnList\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"delimiter\": \"\\\"T\\\"\", \"__rerun_remap_job_id__\": null, \"__page__\": null}", 
-            "tool_version": "1.0.2", 
-            "type": "tool", 
-            "uuid": "4bdeade6-a616-440d-a92c-914531c21337", 
+            },
+            "tool_id": "Cut1",
+            "tool_state": "{\"columnList\": {\"__class__\": \"ConnectedValue\"}, \"delimiter\": \"T\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.2",
+            "type": "tool",
+            "uuid": "4bdeade6-a616-440d-a92c-914531c21337",
             "workflow_outputs": [
                 {
-                    "label": null, 
-                    "output_name": "out_file1", 
-                    "uuid": "6cf71c5b-3386-4994-aa64-9d854d6e4542"
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "5d860e1f-d51e-4503-8e6f-ad13024da2b7"
                 }
             ]
-        }, 
+        },
         "3": {
-            "annotation": "", 
-            "content_id": "Show beginning1", 
-            "errors": null, 
-            "id": 3, 
+            "annotation": "",
+            "content_id": "Cut1",
+            "errors": null,
+            "id": 3,
             "input_connections": {
+                "columnList": {
+                    "id": 0,
+                    "output_name": "output"
+                },
                 "input": {
-                    "id": 2, 
-                    "output_name": "out_file1"
+                    "id": 1,
+                    "output_name": "output"
                 }
-            }, 
+            },
             "inputs": [
                 {
-                    "description": "runtime parameter for tool Select first", 
+                    "description": "runtime parameter for tool Cut",
                     "name": "input"
                 }
-            ], 
-            "label": "select_lines", 
-            "name": "Select first", 
+            ],
+            "label": null,
+            "name": "Cut",
             "outputs": [
                 {
-                    "name": "out_file1", 
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 226,
+                "top": 267
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                },
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "single_column.txt"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Cut1",
+            "tool_state": "{\"columnList\": {\"__class__\": \"ConnectedValue\"}, \"delimiter\": \"T\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.2",
+            "type": "tool",
+            "uuid": "39a4732b-90fd-45e0-832a-2c48c38b4139",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "Show beginning1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Select first",
+                    "name": "input"
+                }
+            ],
+            "label": "select_lines",
+            "name": "Select first",
+            "outputs": [
+                {
+                    "name": "out_file1",
                     "type": "input"
                 }
-            ], 
+            ],
             "position": {
-                "left": 644, 
-                "top": 339.5
-            }, 
-            "post_job_actions": {}, 
-            "tool_id": "Show beginning1", 
-            "tool_state": "{\"__page__\": null, \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"lineNum\": \"\\\"2\\\"\"}", 
-            "tool_version": "1.0.0", 
-            "type": "tool", 
-            "uuid": "3c9bd01e-b4f9-432e-8715-d4d095a9c94c", 
+                "left": 455,
+                "top": 214.5
+            },
+            "post_job_actions": {},
+            "tool_id": "Show beginning1",
+            "tool_state": "{\"header\": \"false\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"lineNum\": \"2\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "3c9bd01e-b4f9-432e-8715-d4d095a9c94c",
             "workflow_outputs": [
                 {
-                    "label": null, 
-                    "output_name": "out_file1", 
-                    "uuid": "77987d3f-61d9-4ffc-a4a0-508ee7480881"
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "ab109fb0-f4ad-4618-ac91-e2cf84405617"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "Show beginning1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Select first",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Select first",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 472,
+                "top": 365.5
+            },
+            "post_job_actions": {},
+            "tool_id": "Show beginning1",
+            "tool_state": "{\"header\": \"false\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"lineNum\": \"2\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "e768dba7-9d17-424b-ad7a-483349e714b5",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "276bc571-e6dc-4dcd-8675-204ba450fbfb"
                 }
             ]
         }
-    }, 
-    "tags": [], 
-    "uuid": "34249fe9-fd2f-4632-8918-6e036d84c616", 
+    },
+    "tags": [],
+    "uuid": "e3078563-48e4-4fd4-a478-f5741c75844e",
     "version": 1
 }
