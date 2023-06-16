@@ -1,2 +1,3 @@
 text_input:
-  dataset_id: 72d451d0c6fac862
+   path: test/file_with_2_cols.txt
+   type: tabular
