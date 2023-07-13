@@ -1,5 +1,5 @@
 Filtered cellgroup markers: {}
-Ribosomal_field_in_var: ''
+Ribosomal_field_in_var: 'mito'
 barcodes:
     optional: false
     tag: null
@@ -480,7 +480,7 @@ run_umap:
         random_seed: '0'
         spread: '1.0'
     use_graph: neighbors_INPUT_OBJ
-sample_variable: ''
+sample_variable: 'Sample.ID'
 scrublet:
     filter: 'false'
     input_format: anndata
