@@ -4,7 +4,7 @@ barcodes:
     optional: false
     tag: null
 batch_variable: ''
-cell_type_field: ''
+cell_type_field: 'NO_CELLTYPE_FIELD'
 cellmeta:
     optional: false
     tag: null
@@ -399,7 +399,7 @@ project_umap_merge:
     top_genes: '50'
     var_modifications: []
 remove ribosomal genes: ''
-representation: ''
+representation: 'X_pca'
 resolution:
     input_type:
         __current_case__: 0
