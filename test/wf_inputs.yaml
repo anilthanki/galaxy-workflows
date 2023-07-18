@@ -1,3 +1,2 @@
 text_input:
-   path: test/file_with_2_cols.tsv
-   type: tabular
+   library_id: dd94b56541391bda
