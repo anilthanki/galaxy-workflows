@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true",
     "annotation": "",
     "format-version": "0.1",
-    "name": "travis (imported from uploaded file)",
+    "name": "simple test workflow (imported from uploaded file)",
     "steps": {
         "0": {
             "annotation": "",
@@ -46,11 +46,11 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "left": 11,
-                "top": 75
+                "left": 3,
+                "top": 111
             },
             "tool_id": null,
-            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
             "tool_version": null,
             "type": "data_input",
             "uuid": "1b2f2147-d854-40d8-9f00-a84ba2ec91f1",
@@ -58,9 +58,35 @@
         },
         "2": {
             "annotation": "",
-            "content_id": "Cut1",
+            "content_id": null,
             "errors": null,
             "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "text_input_to_merge"
+                }
+            ],
+            "label": "text_input_to_merge",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 8,
+                "top": 246
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "5b6aee0b-c126-4d09-b4de-bf21bfaf0a84",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "Cut1",
+            "errors": null,
+            "id": 3,
             "input_connections": {
                 "columnList": {
                     "id": 0,
@@ -71,12 +97,7 @@
                     "output_name": "output"
                 }
             },
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Cut",
-                    "name": "input"
-                }
-            ],
+            "inputs": [],
             "label": "cut",
             "name": "Cut",
             "outputs": [
@@ -99,7 +120,7 @@
                 }
             },
             "tool_id": "Cut1",
-            "tool_state": "{\"columnList\": {\"__class__\": \"ConnectedValue\"}, \"delimiter\": \"T\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"columnList\": {\"__class__\": \"ConnectedValue\"}, \"delimiter\": \"T\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.2",
             "type": "tool",
             "uuid": "4bdeade6-a616-440d-a92c-914531c21337",
@@ -107,33 +128,24 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "5d860e1f-d51e-4503-8e6f-ad13024da2b7"
+                    "uuid": "383a1ac6-57b4-49c7-9162-6aac08797e6c"
                 }
             ]
         },
-        "3": {
+        "4": {
             "annotation": "",
-            "content_id": "Cut1",
+            "content_id": "mergeCols1",
             "errors": null,
-            "id": 3,
+            "id": 4,
             "input_connections": {
-                "columnList": {
-                    "id": 0,
-                    "output_name": "output"
-                },
-                "input": {
-                    "id": 1,
+                "input1": {
+                    "id": 2,
                     "output_name": "output"
                 }
             },
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Cut",
-                    "name": "input"
-                }
-            ],
-            "label": null,
-            "name": "Cut",
+            "inputs": [],
+            "label": "merge_cols",
+            "name": "Merge Columns",
             "outputs": [
                 {
                     "name": "out_file1",
@@ -141,47 +153,84 @@
                 }
             ],
             "position": {
-                "left": 226,
-                "top": 267
+                "left": 284,
+                "top": 350
             },
-            "post_job_actions": {
-                "HideDatasetActionout_file1": {
-                    "action_arguments": {},
-                    "action_type": "HideDatasetAction",
-                    "output_name": "out_file1"
-                },
-                "RenameDatasetActionout_file1": {
-                    "action_arguments": {
-                        "newname": "single_column.txt"
-                    },
-                    "action_type": "RenameDatasetAction",
-                    "output_name": "out_file1"
-                }
-            },
-            "tool_id": "Cut1",
-            "tool_state": "{\"columnList\": {\"__class__\": \"ConnectedValue\"}, \"delimiter\": \"T\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-            "tool_version": "1.0.2",
+            "post_job_actions": {},
+            "tool_id": "mergeCols1",
+            "tool_state": "{\"col1\": \"c1\", \"col2\": \"c2\", \"columns\": [], \"input1\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
             "type": "tool",
-            "uuid": "39a4732b-90fd-45e0-832a-2c48c38b4139",
-            "workflow_outputs": []
+            "uuid": "7737cf1a-0680-4a3d-9683-f0cc0478421e",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "f86d5b88-3b04-46e0-9458-4cde3342930a"
+                }
+            ]
         },
-        "4": {
+        "5": {
             "annotation": "",
-            "content_id": "Show beginning1",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.0",
             "errors": null,
-            "id": 4,
+            "id": 5,
             "input_connections": {
-                "input": {
+                "split_parms|input": {
                     "id": 2,
-                    "output_name": "out_file1"
+                    "output_name": "output"
                 }
             },
             "inputs": [
                 {
-                    "description": "runtime parameter for tool Select first",
-                    "name": "input"
+                    "description": "runtime parameter for tool Split file",
+                    "name": "split_parms"
                 }
             ],
+            "label": null,
+            "name": "Split file",
+            "outputs": [
+                {
+                    "name": "list_output_tab",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 294,
+                "top": 500.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionlist_output_tab": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "list_output_tab"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "6cbe2f30c2d7",
+                "name": "split_file_to_collection",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"split_parms\": {\"select_ftype\": \"tabular\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}, \"top\": \"0\", \"split_by\": {\"select_split_by\": \"row\", \"__current_case__\": 1, \"select_mode\": {\"mode\": \"chunk\", \"__current_case__\": 0, \"chunksize\": \"1\"}, \"newfilenames\": \"split_file\", \"select_allocate\": {\"allocate\": \"byrow\", \"__current_case__\": 2}}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.5.0",
+            "type": "tool",
+            "uuid": "861f7300-1c44-4ee8-994c-96a9cad00fe4",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "Show beginning1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
             "label": "select_lines",
             "name": "Select first",
             "outputs": [
@@ -191,12 +240,12 @@
                 }
             ],
             "position": {
-                "left": 455,
-                "top": 214.5
+                "left": 510,
+                "top": 217.5
             },
             "post_job_actions": {},
             "tool_id": "Show beginning1",
-            "tool_state": "{\"header\": \"false\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"lineNum\": \"2\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"header\": \"false\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"lineNum\": \"2\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.0.1",
             "type": "tool",
             "uuid": "3c9bd01e-b4f9-432e-8715-d4d095a9c94c",
@@ -204,55 +253,12 @@
                 {
                     "label": null,
                     "output_name": "out_file1",
-                    "uuid": "ab109fb0-f4ad-4618-ac91-e2cf84405617"
-                }
-            ]
-        },
-        "5": {
-            "annotation": "",
-            "content_id": "Show beginning1",
-            "errors": null,
-            "id": 5,
-            "input_connections": {
-                "input": {
-                    "id": 3,
-                    "output_name": "out_file1"
-                }
-            },
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Select first",
-                    "name": "input"
-                }
-            ],
-            "label": null,
-            "name": "Select first",
-            "outputs": [
-                {
-                    "name": "out_file1",
-                    "type": "input"
-                }
-            ],
-            "position": {
-                "left": 472,
-                "top": 365.5
-            },
-            "post_job_actions": {},
-            "tool_id": "Show beginning1",
-            "tool_state": "{\"header\": \"false\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"lineNum\": \"2\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-            "tool_version": "1.0.1",
-            "type": "tool",
-            "uuid": "e768dba7-9d17-424b-ad7a-483349e714b5",
-            "workflow_outputs": [
-                {
-                    "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "276bc571-e6dc-4dcd-8675-204ba450fbfb"
+                    "uuid": "137c6351-eaf3-4577-8215-0759862d79ad"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "e3078563-48e4-4fd4-a478-f5741c75844e",
+    "uuid": "41a6071f-4183-4b49-b3dc-d6390899f4ad",
     "version": 1
 }
