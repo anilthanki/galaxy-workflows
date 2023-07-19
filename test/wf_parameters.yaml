@@ -1,16 +1,1 @@
-cut:
-    delimiter: T
-cut_parameter: ''
-merge_cols:
-    col1: c1
-    col2: c2
-    columns: []
-select_lines:
-    header: 'false'
-    lineNum: '2'
-text_input:
-    optional: false
-    tag: ''
-text_input_to_merge:
-    optional: false
-    tag: ''
+
