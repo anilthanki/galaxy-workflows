@@ -28,7 +28,13 @@
             "tool_version": null,
             "type": "data_input",
             "uuid": "1b2f2147-d854-40d8-9f00-a84ba2ec91f1",
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "8a96b93b-58e0-4657-8133-c2001c22c78f"
+                }
+            ]
         },
         "1": {
             "annotation": "",
@@ -41,12 +47,7 @@
                     "output_name": "output"
                 }
             },
-            "inputs": [
-                {
-                    "description": "runtime parameter for tool Split file",
-                    "name": "split_parms"
-                }
-            ],
+            "inputs": [],
             "label": null,
             "name": "Split file",
             "outputs": [
@@ -57,7 +58,7 @@
             ],
             "position": {
                 "left": 267.5,
-                "top": 0.0
+                "top": 0
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.0",
@@ -67,14 +68,63 @@
                 "owner": "bgruening",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"split_parms\": {\"select_ftype\": \"tabular\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}, \"top\": \"0\", \"split_by\": {\"select_split_by\": \"row\", \"__current_case__\": 1, \"select_mode\": {\"mode\": \"chunk\", \"__current_case__\": 0, \"chunksize\": \"1\"}, \"newfilenames\": \"split_file\", \"select_allocate\": {\"allocate\": \"byrow\", \"__current_case__\": 2}}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"split_parms\": {\"select_ftype\": \"tabular\", \"__current_case__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}, \"top\": \"0\", \"split_by\": {\"select_split_by\": \"row\", \"__current_case__\": 1, \"select_mode\": {\"mode\": \"chunk\", \"__current_case__\": 0, \"chunksize\": \"1\"}, \"newfilenames\": \"split_file\", \"select_allocate\": {\"allocate\": \"byrow\", \"__current_case__\": 2}}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "0.5.0",
             "type": "tool",
             "uuid": "cbbcf064-fe1e-4f50-90d6-8e65eaa8c110",
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "list_output_tab",
+                    "uuid": "3acfef4c-92a5-459f-b68a-67901305105a"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "addValue",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Add column",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Add column",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 338.5,
+                "top": 299.5
+            },
+            "post_job_actions": {},
+            "tool_id": "addValue",
+            "tool_state": "{\"exp\": \"1\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"iterate\": \"no\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "f4f5d56c-ad5c-4784-93f2-1620d79b54a7",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "71d18913-a336-4cc2-bcb3-bbe1dd49d87f"
+                }
+            ]
         }
     },
     "tags": [],
-    "uuid": "d40aa8ec-054f-483b-9590-5c1e28069853",
-    "version": 2
+    "uuid": "14433060-3cd9-4c08-aedc-10428c4a5608",
+    "version": 1
 }
